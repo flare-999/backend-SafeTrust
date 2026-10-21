@@ -14,9 +14,6 @@ __pycache__/
 node_modules/
 venv/
 .venv/
-.env
-.env.local
-.env.*
 !.env.example
 !.env.test.example
 
@@ -37,7 +34,6 @@ tests/postgresql-jdbc.jar
 *.swo
 
 # Editors
-.vscode/
 .idea/
 
 # Coverage
@@ -98,3 +94,8 @@ crates/target/
 # tooling build, so keep it available in standalone package builds.
 !/crates/scripts/copy-native.js
 /tests/karate/src/test/resources/**/*.js
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
+config.bat

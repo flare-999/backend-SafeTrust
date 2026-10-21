@@ -9,7 +9,7 @@
     "index.d.ts"
   ],
   "scripts": {
-    "build": "cargo build --release -p escrow-state-machine",
+    "build": "node init && cargo build --release -p escrow-state-machine",
     "postbuild": "node ../scripts/copy-native.js --crate=escrow-state-machine"
   }
 }
