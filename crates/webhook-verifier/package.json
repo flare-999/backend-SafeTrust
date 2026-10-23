@@ -9,7 +9,7 @@
     "index.d.ts"
   ],
   "scripts": {
-    "build": "cargo build --release -p webhook-verifier",
+    "build": "node init && cargo build --release -p webhook-verifier",
     "postbuild": "node ../scripts/copy-native.js --crate=webhook-verifier"
   }
 }
