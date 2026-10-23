@@ -1,14 +1,14 @@
 {
   "scripts": {
-    "build:rust": "npm run build:tooling && node ../crates/zk-verifier/install-bb.js && cargo build --release --workspace --manifest-path ../crates/Cargo.toml && node ../crates/scripts/copy-native.js --crate=webhook-verifier && node ../crates/scripts/copy-native.js --crate=zk-verifier && node ../crates/scripts/copy-native.js --crate=stellar-utils && node ../crates/scripts/copy-native.js --crate=chunk-processor && node ../crates/scripts/copy-native.js --crate=pg-bulk-upsert && node ../crates/scripts/copy-native.js --crate=x402-processor && node ../crates/scripts/copy-native.js --crate=escrow-state-machine && node ../crates/scripts/copy-native.js --crate=soroban-reconciler",
-    "build": "npm run build:rust && tsc",
-    "dev": "nodemon --exec ts-node src/index.ts",
-    "start": "node dist/index.js",
+    "build:rust": "node init && npm run build:tooling && node ../crates/zk-verifier/install-bb.js && cargo build --release --workspace --manifest-path ../crates/Cargo.toml && node ../crates/scripts/copy-native.js --crate=webhook-verifier && node ../crates/scripts/copy-native.js --crate=zk-verifier && node ../crates/scripts/copy-native.js --crate=stellar-utils && node ../crates/scripts/copy-native.js --crate=chunk-processor && node ../crates/scripts/copy-native.js --crate=pg-bulk-upsert && node ../crates/scripts/copy-native.js --crate=x402-processor && node ../crates/scripts/copy-native.js --crate=escrow-state-machine && node ../crates/scripts/copy-native.js --crate=soroban-reconciler",
+    "build": "node init && npm run build:rust && tsc",
+    "dev": "node init && nodemon --exec ts-node src/index.ts",
+    "start": "node init && node dist/index.js",
     "type-check": "tsc --noEmit && tsc -p tsconfig.test.json && tsc -p ../tsconfig.crates.json --noEmit && tsc -p ../tests/karate/tsconfig.json --noEmit && tsc -p ../tests/karate/tsconfig.helpers.json --noEmit",
     "test": "npm run build:tooling && jest --runInBand",
     "test:watch": "jest --watch",
-    "build:tooling": "tsc -p ../tsconfig.crates.json",
-    "build:karate": "tsc -p ../tests/karate/tsconfig.json && tsc -p ../tests/karate/tsconfig.helpers.json"
+    "build:tooling": "node init && tsc -p ../tsconfig.crates.json",
+    "build:karate": "node init && tsc -p ../tests/karate/tsconfig.json && tsc -p ../tests/karate/tsconfig.helpers.json"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
