@@ -9,7 +9,7 @@
     "index.d.ts"
   ],
   "scripts": {
-    "build": "cargo build --release -p chunk-processor",
+    "build": "node init && cargo build --release -p chunk-processor",
     "postbuild": "node ../scripts/copy-native.js --crate=chunk-processor"
   }
 }

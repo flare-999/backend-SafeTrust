@@ -9,7 +9,7 @@
     "index.d.ts"
   ],
   "scripts": {
-    "build": "cargo build --release -p x402-processor",
+    "build": "node init && cargo build --release -p x402-processor",
     "postbuild": "node ../scripts/copy-native.js --crate=x402-processor"
   }
 }
